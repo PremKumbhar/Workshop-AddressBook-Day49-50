@@ -72,7 +72,6 @@ const setContactObject = () => {
     contactObject._state = getInputValueById('#state');
     contactObject._zip = getInputValueById('#zip');
     contactObject._phone = getInputValueById('#phone');
-    contactObject._email = getInputValueById('#email');
     alert(JSON.stringify(contactObject))
   }
 
