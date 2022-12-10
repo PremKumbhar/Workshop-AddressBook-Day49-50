@@ -17,6 +17,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
+    // const addressElement = document.querySelector('#address');
+    // const addressError = document.querySelector('#address-error');
+    // addressElement.addEventListener('input', function () {
+    //     let address = document.querySelector('#address').value;
+    //     if (addressElement.value.length == 0) {
+    //         addressError.textContent = '';
+    //         return;
+    //     }
+    //     try {
+    //         (new Contact()).address = address;
+    //         addressError.textContent = '';
+    //         return;
+    //     } catch (e) {
+    //         addressError.textContent = e;
+    //     }
+    // });
+
 
     const phoneElement = document.querySelector('#phone');
     const phoneError = document.querySelector('.phone-error');
@@ -37,8 +54,8 @@ const save = (event)=>{
 //   event.stopPropagation();
   try{
     setContactObject();
-    createAddressBook();
     createAndUpdateStorage();
+    // resetForm();
   }catch(e){
     console.log(e);
     return;
@@ -149,3 +166,25 @@ const setContactObject = () => {
     const element = document.querySelector(id);
     element.textContent = value;
   }
+
+
+//   uc9
+
+const resetForm = () => {
+    setValue('#name','');
+    setValue('#address','');
+    setSelectedIndex('#city',0);
+    setSelectedIndex('#state',0);
+    setValue('#zip','');
+    setValue('#phone','');
+}
+
+const setValue = (id,value) => {
+  const element = document.querySelector(id);
+  element.value = value;
+}
+
+const setSelectedIndex = (id,index) => {
+  const element = document.querySelector(id);
+  element.selectedIndex = index;
+}
